@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-matrix_shape = __import__('2-size_me_please').matrix_shape
 
 def add_matrices2D(mat1, mat2):
     
-    if matrix_shape(mat1) != matrix_shape(mat2):
+    if (len(mat1) != len(mat2)) or (len(mat1[0]) != len(mat2[0])):
         return None
     
     new_mat = []
