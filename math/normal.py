@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-import numpy as np
 
 class Normal:
     def __init__(self, data=None, mean=0., stddev=1.):
@@ -13,5 +12,6 @@ class Normal:
                 raise TypeError("data must be a list")
             if len(data) < 2:
                 raise ValueError("data must contain multiple values")
-            self.mean = np.mean(np.array(data))
-            self.stddev = np.std(np.array(data))
+            self.mean = float(sum(data)/len(data))
+            variance = sum((x-mean)**2 for x in data) / len(data)
+            self.stddev = float(variance ** 0.5)
