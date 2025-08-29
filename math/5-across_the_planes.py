@@ -3,9 +3,7 @@ matrix_shape = __import__('2-size_me_please').matrix_shape
 
 def add_matrices2D(mat1, mat2):
     
-    if not mat1 or not mat2 or not mat1[0] or not mat2[0]:
-        return None
-    if matrix_shape(mat1) != matrix_shape(mat2):
+    if (len(mat1) != len(mat2)) or (len(mat1[0]) != len(mat2[0])):
         return None
     
     new_mat = []
